@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>${TITLE}</title>
+
+    <style>
+        body {
+            background: #333;
+        }
+        .responsive {
+            width: 80%;
+            height: auto;
+            margin-left: 10%;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="/live-cam.jpg" alt="Loading live camera image" class="responsive" id="live_img">
+
+    <script type="application/javascript">
+
+        function updateImage() {
+            document.getElementById("live_img").src = "/live-cam.jpg?" + new Date().getTime();
+        }
+
+        setInterval(updateImage, 5000);
+
+    </script>
+</body>
+</html>
